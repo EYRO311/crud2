@@ -1,6 +1,20 @@
 const controller ={};
+
+/*controller.listm = (req, res) => {
+  req.getConnection((err,conn2) =>{
+      conn2.query('SELECT * FROM music', (err, music)=> {
+          if (err){
+              res.json(err);
+          }
+          console.log(music);
+          res.render('customers', {
+           data2:music  
+          });
+      });        
+   });
+};*/
  controller.list = (req, res) => {
-    req.getConnection((err,conn,conn2) =>{
+    req.getConnection((err,conn) =>{
         conn.query('SELECT * FROM users', (err, users)=> {
             if (err){
                 res.json(err);
@@ -9,18 +23,11 @@ const controller ={};
             res.render('customers', {
              data:users   
             });
-        });
-        conn2.query('SELECT * FROM music', (err, music)=> {
-            if (err){
-                res.json(err);
-            }
-            console.log(music);
-            res.render('customers', {
-             data2:music   
-            });
         });        
      });
  };
+ 
+
 controller.save = (req, res)=>{
     const data = req.body;
   console.log(data)

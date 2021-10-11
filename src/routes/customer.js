@@ -1,7 +1,10 @@
 const express = require('express');
+const { list } = require('../controllers/custmerController');
+const { listm } = require('../controllers/custmerController');
 const router = express.Router();
 const custmerController=  require('../controllers/custmerController');
 
+//router.get('/',custmerController.listm);
 router.get('/',custmerController.list);
 router.post('/add',custmerController.save);
 router.get('/delete/:id',custmerController.delete);

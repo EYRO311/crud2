@@ -8,7 +8,7 @@ const app = express();
 
 // import routers
 const customerRoutes = require('./routes/customer');const { urlencoded } = require('express');
-;
+
 
 //setting
 app.set('port', process.env.PORT || 3000);
